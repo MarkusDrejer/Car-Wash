@@ -6,7 +6,7 @@ public class Receipt {
     private String washType;
 
     public String printReceipt() {
-
+        return "hej";
     }
     public Receipt(int orderID, String costumerName, int washCard, String washType) {
 
