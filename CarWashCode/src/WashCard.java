@@ -25,5 +25,9 @@ public class WashCard {
         return id;
     }
 
+    public int getPin(){
+        return pin;
+    }
+
 
 }

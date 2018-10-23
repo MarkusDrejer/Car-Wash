@@ -52,4 +52,13 @@ public class CarWashSystem {
         int pass = data.nextInt();
         adminPass.add(pass);
     }
+    public static ArrayList<WashCard> getWashCards(){
+        return washCardData;
+    }
+    public static ArrayList<CreditCard> getCreditCards(){
+        return creditCardData;
+    }
+    public static ArrayList<Integer> getAdminPass(){
+        return adminPass;
+    }
 }

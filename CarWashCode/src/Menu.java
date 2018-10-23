@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Menu {
 
+    private WashCard currentCard;
+
     public Menu(Scanner console){
         int choice;
         do {
@@ -15,7 +17,7 @@ public class Menu {
                     washTypeMenu(console);
                     break;
                 case 2:
-
+                    currentCard = CardReader.CardInsert();
                     break;
                 case 3:
 
