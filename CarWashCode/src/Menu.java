@@ -14,13 +14,15 @@ public class Menu {
 
             switch (choice){
                 case 1:
+                    currentCard = CardReader.CardInsert();
                     washTypeMenu(console);
                     break;
                 case 2:
                     currentCard = CardReader.CardInsert();
+                    System.out.println("Your balance is: " + currentCard.getBalance());
                     break;
                 case 3:
-
+                    currentCard = CardReader.CardInsert();
                     break;
                 case 4:
 
