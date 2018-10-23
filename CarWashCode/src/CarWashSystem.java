@@ -18,6 +18,18 @@ public class CarWashSystem {
             String text1 = input.nextLine();
             processLineW(text1);
         }
+        //Preload CreditCards//
+        Scanner input2 = new Scanner(new File("resources/creditcards.txt"));
+        while (input2.hasNextLine()) {
+            String text2 = input2.nextLine();
+            processLineC(text2);
+        }
+        //Preload Admin Passwords//
+        Scanner input3 = new Scanner(new File("resources/adminpass.txt"));
+        while (input3.hasNextLine()) {
+            String text3 = input3.nextLine();
+            processLineA(text3);
+        }
         
         Menu m = new Menu(console);
         
@@ -29,5 +41,15 @@ public class CarWashSystem {
         String name = data.next();
         int id = data.nextInt();
         washCardData.add(new WashCard(PIN, name, id));
+    }
+    private static void processLineC(String text) {
+        Scanner data = new Scanner(text);
+        int PIN = data.nextInt();
+        creditCardData.add(new CreditCard(PIN));
+    }
+    private static void processLineA(String text){
+        Scanner data = new Scanner(text);
+        int pass = data.nextInt();
+        adminPass.add(pass);
     }
 }
