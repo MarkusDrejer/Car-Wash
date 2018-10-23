@@ -1,5 +1,13 @@
 public class Transaction {
 
-    private String hello;
+    private int price;
+
+    public void deductBalance() {
+
+    }
+    
+    public Transaction(int price) {
+
+    }
 
 }
