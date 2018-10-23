@@ -4,6 +4,8 @@ public class CreditCard {
     private int id;
 
     public CreditCard(int PIN, int balance, int id) {
-        
+        this.PIN = PIN;
+        this.balance = balance;
+        this.id = id;
     }
 }
