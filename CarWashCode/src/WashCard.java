@@ -5,7 +5,7 @@ public class WashCard {
     private String name;
     private int balance = 0;
 
-    public WashCard(int pin, String name) {
+    public WashCard(int pin, int id, String name) {
 
     }
 

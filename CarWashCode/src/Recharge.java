@@ -3,7 +3,6 @@ public class Recharge {
     private CreditCard cCard;
     private WashCard wCard;
 
-
     public Recharge(int newAmount, CreditCard cCard, WashCard wCard) {
 
     }
