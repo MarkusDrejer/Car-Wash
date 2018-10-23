@@ -10,6 +10,8 @@ public class Transaction {
     
     public Transaction(int price) {
 
+        this.price = price;
+
     }
 
 }
