@@ -14,7 +14,7 @@ public class WashCard {
     }
 
     public int getBalance() {
-    return balance;
+        return balance;
     }
 
     public int getId() {
