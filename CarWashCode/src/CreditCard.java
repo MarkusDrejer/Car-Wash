@@ -3,9 +3,7 @@ public class CreditCard {
     private int balance = 0;
     private int id;
 
-    public CreditCard(int PIN, int balance, int id) {
+    public CreditCard(int PIN) {
         this.PIN = PIN;
-        this.balance = balance;
-        this.id = id;
     }
 }
