@@ -15,6 +15,8 @@ public class Receipt {
         this.washType = washType;
     }
     public Receipt(int orderID, String costumerName, int washCard) {
-
+        this.orderID = orderID;
+        this.costumerName = costumerName;
+        this.washCardId = washCardId;
     }
 }
