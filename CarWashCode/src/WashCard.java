@@ -9,7 +9,7 @@ public class WashCard {
 
         this.pin = pin;
         this.id = id;
-        this.name = name; //heyhey
+        this.name = name;
 
     }
 
