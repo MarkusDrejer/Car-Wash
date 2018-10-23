@@ -2,6 +2,8 @@ public class Transaction {
 
     private int price;
 
+
+
     public void deductBalance() {
 
     }

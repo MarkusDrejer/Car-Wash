@@ -10,7 +10,7 @@ public class WashCard {
     }
 
     public void updateBalance(int newAmount) {
-
+        balance = balance + newAmount;
     }
 
     public int getBalance() {
