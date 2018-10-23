@@ -9,7 +9,7 @@ public class WashCard {
 
     }
 
-    public void updateBalance(int newAmount) {
+    public void recharge(int newAmount) {
         balance = balance + newAmount;
     }
 
