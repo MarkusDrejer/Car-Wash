@@ -7,6 +7,10 @@ public class WashCard {
 
     public WashCard(int pin, int id, String name) {
 
+        this.pin = pin;
+        this.id = id;
+        this.name = name;
+
     }
 
     public void recharge(int newAmount) {
