@@ -5,5 +5,6 @@ public class Menu {
         String name;
         int aidaiwdawjdawidjiawida;
         boolean yes;
+        int hejhejhej;
     }
 }
