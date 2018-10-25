@@ -4,6 +4,7 @@ public class Menu {
 
     private WashCard currentWashCard;
     private CreditCard currentCreditCard;
+    private Wash currentWash;
 
     public Menu(Scanner console){
         int choice;
@@ -14,17 +15,21 @@ public class Menu {
             choice = console.nextInt();
 
             switch (choice){
+                //Wash Car
                 case 1:
                     currentWashCard = (WashCard) CardReader.cardInsert(CarWashSystem.getWashCards());
                     washTypeMenu(console);
                     break;
+                //Balance
                 case 2:
                     currentWashCard = (WashCard) CardReader.cardInsert(CarWashSystem.getWashCards());
                     System.out.println("Your balance is: " + currentWashCard.getBalance());
                     break;
+                //Recharge
                 case 3:
                     //currentCard = CardReader.CardInsert();
                     break;
+                //Statistics
                 case 4:
 
                     break;
@@ -44,13 +49,13 @@ public class Menu {
 
             switch (choice2){
                 case 1:
-
+                    currentWash = new Wash("Economy", "1:30", 50);
                     break;
                 case 2:
-
+                    currentWash = new Wash("Standard", "2:00", 80);
                     break;
                 case 3:
-
+                    currentWash = new Wash("Deluxe", "3:00", 120);
                     break;
             }
 
