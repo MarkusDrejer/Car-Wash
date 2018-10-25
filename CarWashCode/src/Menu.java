@@ -50,15 +50,15 @@ public class Menu {
             switch (choice2){
                 case 1:
                     currentWash = new Wash("Economy", "1:30", 50);
-                    Transaction tr1 = new Transaction(50, currentWashCard);
+                    Transaction tr1 = new Transaction(currentWash.getPrice(), currentWashCard);
                     break;
                 case 2:
                     currentWash = new Wash("Standard", "2:00", 80);
-                    Transaction tr2 = new Transaction(80, currentWashCard);
+                    Transaction tr2 = new Transaction(currentWash.getPrice(), currentWashCard);
                     break;
                 case 3:
                     currentWash = new Wash("Deluxe", "3:00", 120);
-                    Transaction tr3 = new Transaction(120, currentWashCard);
+                    Transaction tr3 = new Transaction(currentWash.getPrice(), currentWashCard);
                     break;
             }
 
