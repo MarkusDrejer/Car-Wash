@@ -7,7 +7,7 @@ public abstract class CardReader {
     private static Card currentCard = null;
 
     public static Card cardInsert(String type, ArrayList<Card> arr) {
-        System.out.println(type + " Id please");
+        System.out.println(type + " Id please:");
         int userId = console.nextInt();
 
         //Cant loop properly after 1st attempt
@@ -18,7 +18,7 @@ public abstract class CardReader {
             }
         }
         if (currentCard == null) {
-            System.out.println("No such Id, please try again");
+            System.out.println("No such Id, please try again:");
             cardInsert(type, arr);
         }
         else {
@@ -28,11 +28,11 @@ public abstract class CardReader {
     }
 
     public static void enterPin(){
-        System.out.println("Please enter PIN");
+        System.out.println("Please enter PIN:");
         int userInput = console.nextInt();
         int count = 0;
         while (userInput != currentCard.getPin()) {
-            System.out.println("Wrong PIN, please try again");
+            System.out.println("Wrong PIN, please try again:");
             count++;
             if (count >= 3) {
                 System.out.println("Please get your shit together");

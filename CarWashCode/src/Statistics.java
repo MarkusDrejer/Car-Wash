@@ -59,7 +59,7 @@ public abstract class Statistics {
     }
 
     public static boolean verifyAdmin(Scanner console){
-        System.out.println("Please enter Admin Password");
+        System.out.println("Please enter Admin Password:");
         int password = console.nextInt();
         for(int i : CarWashSystem.getAdminPass()){
             if(password == i){

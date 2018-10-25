@@ -19,6 +19,10 @@ public class Receipt {
         this.washCardId = washCardId;
     }
     public String toString() {
+        if(washType == null){
+            return "Your order id: " + orderID + "\n" + "Your total: " + total + "\n" + "Your name: " + costumerName + "\n" +
+                    "Your Washcard id: " + washCardId;
+        }
         return "Your order id: " + orderID + "\n" + "Your total: " + total + "\n" + "Your name: " + costumerName + "\n" +
                 "Your Washcard id: " + washCardId + "\n" + "Wash type: " + washType;
 
