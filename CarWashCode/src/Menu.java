@@ -15,7 +15,7 @@ public class Menu {
 
             switch (choice){
                 case 1:
-                    //currentCard = CardReader.CardInsert();
+                    currentWashCard = (WashCard) CardReader.cardInsert(CarWashSystem.getWashCards());
                     washTypeMenu(console);
                     break;
                 case 2:
