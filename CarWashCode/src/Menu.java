@@ -93,12 +93,13 @@ public class Menu {
 
         System.out.println("Please enter amount to insert:");
         int amountToInsert = 0;
-        currentWashCard.recharge(amountToInsert);
+        amountToInsert = console.nextInt();
         while (amountToInsert < 200 || amountToInsert > 1000) {
             System.out.println("You can't deposit that amount. Deposits must be between 200 kr. and 1000 kr.");
             System.out.println("Please enter amount to insert:");
-
+            amountToInsert = console.nextInt();
         }
+        currentWashCard.recharge(amountToInsert);
         System.out.println( amountToInsert + " kr. successfully inserted!");
 
         System.out.println("Do you want a Receipt? (Yes or No)");
