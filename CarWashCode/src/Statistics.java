@@ -18,11 +18,11 @@ import java.util.ArrayList;
         washTypes.add(type);
     }
 
-    public String getStats() {
+    private String findPopular() {
         return "lort";
     }
 
-    private String findPopular() {
+    public String toString() {
         return "lort";
     }
 
