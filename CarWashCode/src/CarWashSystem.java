@@ -30,7 +30,7 @@ public class CarWashSystem {
             String text3 = input3.nextLine();
             processLineA(text3);
         }
-        
+
         Menu m = new Menu(console);
         
     }
@@ -45,8 +45,8 @@ public class CarWashSystem {
     private static void processLineC(String text) {
         Scanner data = new Scanner(text);
         int PIN = data.nextInt();
-        //int Id = data.nextInt();
-        creditCardData.add(new CreditCard(PIN));
+        int Id = data.nextInt();
+        creditCardData.add(new CreditCard(PIN, Id));
     }
     private static void processLineA(String text){
         Scanner data = new Scanner(text);
