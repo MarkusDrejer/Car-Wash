@@ -53,7 +53,7 @@ import java.util.ArrayList;
     }
 
     public static String showStats() {
-        return "Antal vaske foretaget: " + count + "\n" + "Revenue: " + revenue + "\n" + "Most popular wash: "
+        return "Number of washes: " + count + "\n" + "Revenue: " + revenue + "\n" + "Most popular wash: "
                 + findPopular();
     }
 
