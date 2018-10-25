@@ -30,7 +30,7 @@ public class Wash {
     }
 
     public String getInfo() {
-    return "hej";
+    return "hejd";
     }
 
     public void addStats() {
