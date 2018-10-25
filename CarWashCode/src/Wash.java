@@ -23,7 +23,7 @@ public class Wash {
 
     }
 
-    public void checkDiscount() {
+    private void checkDiscount() {
         int diff;
         if( day != 7 && day != 6 && time < 14) {
             diff = price * 20 / 100;
@@ -32,11 +32,14 @@ public class Wash {
     }
 
     public String getInfo() {
-    return "hejd";
+        checkDiscount();
+    return "Type: " + type + "\n" + "Length: " + length + "\n" + "Price: " + price;
     }
 
     public void addStats() {
-
+        Statistics.addWash();
+        Statistics.addRevenue(price);
+        Statistics.addWashType(typeStat);
     }
 
     public String getType() {
