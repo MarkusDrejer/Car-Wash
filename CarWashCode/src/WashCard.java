@@ -14,11 +14,7 @@ public class WashCard extends Card{
     }
 
     public void recharge(int newAmount) {
-        if (balance <= 0) {
-            System.out.println("Please recharge your WashCard.");
-        } else {
             balance = balance + newAmount;
-        }
     }
 
     public int getBalance() {
