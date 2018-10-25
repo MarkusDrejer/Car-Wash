@@ -32,7 +32,9 @@ public class Wash {
     }
 
     public String toString() {
-        checkDiscount();
+        if(typeStat != 3){
+            checkDiscount();
+        }
     return "Type: " + type + "\n" + "Length: " + length + "\n" + "Price: " + price;
     }
 

@@ -27,7 +27,10 @@ public class Menu {
                     break;
                 //Recharge
                 case 3:
-                    //currentCard = CardReader.CardInsert();
+                    currentCreditCard = (CreditCard) CardReader.cardInsert("Credit", CarWashSystem.getCreditCards());
+                    currentWashCard = (WashCard) CardReader.cardInsert("Wash", CarWashSystem.getWashCards());
+                    System.out.println("Please enter amount to insert");
+                    currentWashCard.recharge(console.nextInt());
                     break;
                 //Statistics
                 case 4:

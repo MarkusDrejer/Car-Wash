@@ -14,7 +14,7 @@ public class WashCard extends Card{
     }
 
     public void recharge(int newAmount) {
-        balance = balance + newAmount;
+            balance = balance + newAmount;
     }
 
     public int getBalance() {

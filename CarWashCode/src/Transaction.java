@@ -4,5 +4,4 @@ public class Transaction {
         currentCard.recharge(-washPrice);
     }
 
-
 }
