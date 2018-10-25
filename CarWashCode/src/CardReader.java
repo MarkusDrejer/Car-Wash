@@ -1,20 +1,21 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class CardReader {
 
     private static Scanner console = new Scanner(System.in);
-    private static WashCard currentCard;
+    private static Card currentCard;
 
-    public static WashCard CardInsert(){
+    public static Card CardInsert(ArrayList<Card> arr){
         System.out.println("Id please");
         int userId = console.nextInt();
-        for(int i = 0; i < CarWashSystem.getWashCards().size(); i++){
-            WashCard temp = CarWashSystem.getWashCards().get(i);
-            if(userId == temp.getId()){
-                currentCard = temp;
+        for(Card c : arr){
+            if(userId == c.getId()){
+                currentCard = c;
                 break;
             }
         }
+
         System.out.println("Please enter PIN");
         int userInput = console.nextInt();
         int count = 0;

@@ -1,4 +1,4 @@
-public class WashCard {
+public class WashCard extends Card{
 
     private int pin;
     private int id;

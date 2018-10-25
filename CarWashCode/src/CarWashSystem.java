@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class CarWashSystem {
 
-    private static ArrayList<WashCard> washCardData = new ArrayList<>();
-    private static ArrayList<CreditCard> creditCardData = new ArrayList<>();
+    private static ArrayList<Card> washCardData = new ArrayList<>();
+    private static ArrayList<Card> creditCardData = new ArrayList<>();
     private static ArrayList<Integer> adminPass = new ArrayList<>();
 
     private static Scanner console = new Scanner(System.in);
@@ -45,6 +45,7 @@ public class CarWashSystem {
     private static void processLineC(String text) {
         Scanner data = new Scanner(text);
         int PIN = data.nextInt();
+        //int Id = data.nextInt();
         creditCardData.add(new CreditCard(PIN));
     }
     private static void processLineA(String text){
@@ -52,10 +53,10 @@ public class CarWashSystem {
         int pass = data.nextInt();
         adminPass.add(pass);
     }
-    public static ArrayList<WashCard> getWashCards(){
+    public static ArrayList<Card> getWashCards(){
         return washCardData;
     }
-    public static ArrayList<CreditCard> getCreditCards(){
+    public static ArrayList<Card> getCreditCards(){
         return creditCardData;
     }
     public static ArrayList<Integer> getAdminPass(){

@@ -1,9 +1,16 @@
-public class CreditCard {
+public class CreditCard extends Card{
     private int PIN;
-    private int balance = 0;
     private int id;
 
     public CreditCard(int PIN) {
         this.PIN = PIN;
+        this.id = id;
+    }
+
+    public int getPin(){
+        return PIN;
+    }
+    public int getId(){
+        return id;
     }
 }

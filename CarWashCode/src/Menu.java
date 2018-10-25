@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Menu {
 
-    private WashCard currentCard;
+    private WashCard currentWashCard;
+    private CreditCard currentCreditCard;
 
     public Menu(Scanner console){
         int choice;
@@ -14,15 +15,15 @@ public class Menu {
 
             switch (choice){
                 case 1:
-                    currentCard = CardReader.CardInsert();
+                    //currentCard = CardReader.CardInsert();
                     washTypeMenu(console);
                     break;
                 case 2:
-                    currentCard = CardReader.CardInsert();
-                    System.out.println("Your balance is: " + currentCard.getBalance());
+                    currentWashCard = (WashCard) CardReader.CardInsert(CarWashSystem.getWashCards());
+                    System.out.println("Your balance is: " + currentWashCard.getBalance());
                     break;
                 case 3:
-                    currentCard = CardReader.CardInsert();
+                    //currentCard = CardReader.CardInsert();
                     break;
                 case 4:
 
