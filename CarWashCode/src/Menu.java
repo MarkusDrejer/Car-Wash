@@ -16,6 +16,10 @@ public class Menu {
                     "\n" + "4. Statistics" + "\n" + "0. Exit");
             choice = console.nextInt();
 
+            if (choice < 0 || choice > 4) {
+                System.out.println("Not a valid choice.");
+            }
+
             switch (choice){
                 //Wash Car
                 case 1:
