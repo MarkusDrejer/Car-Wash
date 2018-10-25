@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
     private int count;
     private int revenue = 0;
-    private ArrayList<String> washTypes;
+    private ArrayList<String> washTypes = new ArrayList<>();
 
     public void addWash() {
         count++;
     }
 
     public void addRevenue(int newRevenue) {
-
+        revenue += newRevenue;
     }
 
     public void addWashType(String type) {
-
+        washTypes.add(type);
     }
 
     public String getStats() {
