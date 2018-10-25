@@ -10,6 +10,7 @@ public abstract class CardReader {
         System.out.println("Id please");
         int userId = console.nextInt();
 
+        //Cant loop properly on after 1st attempt
         for (Card c : arr) {
             if (userId == c.getId()) {
                 currentCard = c;
@@ -17,6 +18,7 @@ public abstract class CardReader {
             }
         }
         if (currentCard == null) {
+            System.out.println("No such Id, please try again");
             cardInsert(arr);
         }
         else {
