@@ -45,9 +45,14 @@ public class Menu {
     private void washTypeMenu(Scanner console){
         int choice2;
         do {
+
             System.out.println("Please choose wash type");
             System.out.println("1. Economy" + "\n" + "2. Standard" + "\n" + "3. Deluxe" + "\n" + "0. Cancel");
             choice2 = console.nextInt();
+
+            if ((Integer)choice2 instanceof Integer) {
+                System.out.println("Not a valid choice.");
+            }
 
             switch (choice2){
                 case 1:
