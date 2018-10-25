@@ -108,9 +108,16 @@ public class Menu {
         currentWashCard.recharge(amountToInsert);
         System.out.println( amountToInsert + " kr. successfully inserted!");
 
-        System.out.println("Do you want a Receipt? (Yes or No)");
-        console.nextLine();
-        if(console.nextLine().equalsIgnoreCase("yes")) {
+        System.out.println("Do you want a Receipt? (1 for Yes or 2 for No):");
+
+        int receiptChoice = console.nextInt();
+
+        while (receiptChoice != 1 && receiptChoice != 2) {
+            System.out.println("I didn't understand that. Do you want a Receipt? (1 for Yes or 2 for No):");
+            receiptChoice = console.nextInt();
+        }
+
+        if (receiptChoice == 1) {
             Receipt rec = new Receipt(rand.nextInt(10000), amountToInsert, currentWashCard.getName(), currentWashCard.getId());
             System.out.println(rec);
         }
