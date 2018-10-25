@@ -31,7 +31,9 @@ public class Menu {
                     break;
                 //Statistics
                 case 4:
-
+                    if(Statistics.verifyAdmin(console)){
+                        System.out.println(Statistics.showStats());
+                    }
                     break;
             }
 
