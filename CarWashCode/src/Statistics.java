@@ -25,7 +25,7 @@ import java.util.ArrayList;
         int type3 = 0;
 
         for (int i = 0; i < washTypes.size(); i++) {
-            switch (washTypes) {
+            switch (washTypes.get(i)) {
                 case 1:
                     type1++;
                     break;
