@@ -68,9 +68,11 @@ public class Menu {
     }
 
     private void makeWash(){
+        currentWash.addStats();
         Transaction tr = new Transaction(currentWash.getPrice(), currentWashCard);
         Receipt rec = new Receipt(0, currentWash.getPrice(), currentWashCard.getName(),
                 currentWashCard.getId(), currentWash.getType());
+        System.out.println("Thanks for your purchase, your wash will begin shortly");
         System.out.println(rec);
     }
 }
