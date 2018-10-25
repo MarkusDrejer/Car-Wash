@@ -59,16 +59,19 @@ public class Menu {
                     currentWash = new Wash("Economy", "1:30", 50, 1);
                     System.out.println(currentWash);
                     makeWash(console);
+                    choice2 = 0;
                     break;
                 case 2:
                     currentWash = new Wash("Standard", "2:00", 80, 2);
                     System.out.println(currentWash);
                     makeWash(console);
+                    choice2 = 0;
                     break;
                 case 3:
                     currentWash = new Wash("Deluxe", "3:00", 120, 3);
                     System.out.println(currentWash);
                     makeWash(console);
+                    choice2 = 0;
                     break;
             }
         } while(choice2 != 0);
@@ -92,8 +95,7 @@ public class Menu {
         currentWashCard = (WashCard) CardReader.cardInsert("Wash", CarWashSystem.getWashCards());
 
         System.out.println("Please enter amount to insert:");
-        int amountToInsert = 0;
-        amountToInsert = console.nextInt();
+        int amountToInsert = console.nextInt();
         while (amountToInsert < 200 || amountToInsert > 1000) {
             System.out.println("You can't deposit that amount. Deposits must be between 200 kr. and 1000 kr.");
             System.out.println("Please enter amount to insert:");
