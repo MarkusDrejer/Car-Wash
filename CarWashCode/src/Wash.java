@@ -6,14 +6,16 @@ public class Wash {
     private String type;
     private String length;
     private int price;
+    private int typeStat;
     private int day;
     private int time;
     Date now = new Date();
 
-    public Wash(String type, String length, int price) {
+    public Wash(String type, String length, int price, int typeStat) {
         this.type = type;
         this.length = length;
         this.price = price;
+        this.typeStat = typeStat;
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(now);
         day = calendar.get(Calendar.DAY_OF_WEEK);

@@ -18,7 +18,7 @@ import java.util.ArrayList;
         washTypes.add(type);
     }
 
-    private static int findPopular() {
+    private static String findPopular() {
 
         int type1 = 0;
         int type2 = 0;
@@ -38,16 +38,17 @@ import java.util.ArrayList;
             }
         }
 
-        if (type1 == type2 || type2 == type3 || type3 == type1) {
-            return -1;
-        } else {
-
-            int max = Math.max(type1, type2);
-
-            max = Math.max(max, type3);
-
-            return max;
-
+        if(type1 > type2 && type1 > type3){
+            return "Economy";
+        }
+        else if(type2 > type1 && type2 > type3){
+            return "Standard";
+        }
+        else if(type3 > type1 && type3 > type2){
+            return "Deluxe";
+        }
+        else{
+            return "No most popular wash";
         }
     }
 
