@@ -46,11 +46,11 @@ public class Menu {
         int choice2;
         do {
 
-            System.out.println("Please choose wash type");
+            System.out.println("Please choose wash type:");
             System.out.println("1. Economy" + "\n" + "2. Standard" + "\n" + "3. Deluxe" + "\n" + "0. Cancel");
             choice2 = console.nextInt();
 
-            if ((Integer)choice2 instanceof Integer) {
+            if (choice2 < 0 || choice2 > 3) {
                 System.out.println("Not a valid choice.");
             }
 
@@ -91,10 +91,15 @@ public class Menu {
         currentCreditCard = (CreditCard) CardReader.cardInsert("Credit", CarWashSystem.getCreditCards());
         currentWashCard = (WashCard) CardReader.cardInsert("Wash", CarWashSystem.getWashCards());
 
-        System.out.println("Please enter amount to insert");
-        int amountToInsert = console.nextInt();
+        System.out.println("Please enter amount to insert:");
+        int amountToInsert = 0;
         currentWashCard.recharge(amountToInsert);
-        System.out.println( amountToInsert + " Successfully inserted");
+        while (amountToInsert < 200 || amountToInsert > 1000) {
+            System.out.println("You can't deposit that amount. Deposits must be between 200 kr. and 1000 kr.");
+            System.out.println("Please enter amount to insert:");
+
+        }
+        System.out.println( amountToInsert + " kr. successfully inserted!");
 
         System.out.println("Do you want a Receipt? (Yes or No)");
         console.nextLine();
