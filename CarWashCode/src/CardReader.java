@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class CardReader {
-
+//Jeg hedder Søren
     private static Scanner console = new Scanner(System.in);
     private static Card currentCard = null;
 
