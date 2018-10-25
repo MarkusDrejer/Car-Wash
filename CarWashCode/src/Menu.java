@@ -69,7 +69,8 @@ public class Menu {
 
     private void makeWash(){
         Transaction tr = new Transaction(currentWash.getPrice(), currentWashCard);
-        Receipt rec = new Receipt(0, currentWashCard.getName(), currentWashCard.getId(), currentWash.getType());
+        Receipt rec = new Receipt(0, currentWash.getPrice(), currentWashCard.getName(),
+                currentWashCard.getId(), currentWash.getType());
         System.out.println(rec);
     }
 }
