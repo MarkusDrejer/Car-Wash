@@ -23,14 +23,14 @@ public class Wash {
 
     public void checkDiscount() {
         int diff;
-    if( day != 7 && day != 6 && time < 14) {
-        diff = price * 20 / 100;
-        price = price - diff;
-    }
+        if( day != 7 && day != 6 && time < 14) {
+            diff = price * 20 / 100;
+            price = price - diff;
+        }
     }
 
     public String getInfo() {
-    return "hej";
+    return "hejd";
     }
 
     public void addStats() {
