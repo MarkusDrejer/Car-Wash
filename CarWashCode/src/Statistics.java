@@ -2,23 +2,23 @@ import java.util.ArrayList;
 
     public abstract class Statistics {
 
-    private int count = 0;
-    private int revenue = 0;
-    private ArrayList<Integer> washTypes = new ArrayList<>();
+    private static int count = 0;
+    private static int revenue = 0;
+    private static ArrayList<Integer> washTypes = new ArrayList<>();
 
-    public void addWash() {
+    public static void addWash() {
         count++;
     }
 
-    public void addRevenue(int newRevenue) {
+    public static void addRevenue(int newRevenue) {
         revenue += newRevenue;
     }
 
-    public void addWashType(int type) {
+    public static void addWashType(int type) {
         washTypes.add(type);
     }
 
-    private int findPopular() {
+    private static int findPopular() {
 
         int type1 = 0;
         int type2 = 0;
@@ -51,7 +51,7 @@ import java.util.ArrayList;
         }
     }
 
-    public String toString() {
+    public static String showStats() {
         return "lort";
     }
 
