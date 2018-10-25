@@ -27,10 +27,7 @@ public class Menu {
                     break;
                 //Recharge
                 case 3:
-                    currentCreditCard = (CreditCard) CardReader.cardInsert("Credit", CarWashSystem.getCreditCards());
-                    currentWashCard = (WashCard) CardReader.cardInsert("Wash", CarWashSystem.getWashCards());
-                    System.out.println("Please enter amount to insert");
-                    currentWashCard.recharge(console.nextInt());
+                    makeRecharge(console);
                     break;
                 //Statistics
                 case 4:
@@ -76,6 +73,18 @@ public class Menu {
         Receipt rec = new Receipt(0, currentWash.getPrice(), currentWashCard.getName(),
                 currentWashCard.getId(), currentWash.getType());
         System.out.println("Thanks for your purchase, your wash will begin shortly");
+        System.out.println(rec);
+    }
+    private void makeRecharge(Scanner console){
+        currentCreditCard = (CreditCard) CardReader.cardInsert("Credit", CarWashSystem.getCreditCards());
+        currentWashCard = (WashCard) CardReader.cardInsert("Wash", CarWashSystem.getWashCards());
+
+        System.out.println("Please enter amount to insert");
+        int amountToInsert = console.nextInt();
+        currentWashCard.recharge(amountToInsert);
+        System.out.println( amountToInsert + " Successfully inserted");
+
+        Receipt rec = new Receipt(0, amountToInsert, currentWashCard.getName(), currentWashCard.getId());
         System.out.println(rec);
     }
 }
