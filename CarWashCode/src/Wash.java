@@ -31,7 +31,7 @@ public class Wash {
         }
     }
 
-    public String getInfo() {
+    public String toString() {
         checkDiscount();
     return "Type: " + type + "\n" + "Length: " + length + "\n" + "Price: " + price;
     }

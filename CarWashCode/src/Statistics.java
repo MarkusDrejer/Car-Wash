@@ -1,6 +1,7 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
-    public abstract class Statistics {
+public abstract class Statistics {
 
     private static int count = 0;
     private static int revenue = 0;
@@ -57,4 +58,15 @@ import java.util.ArrayList;
                 + findPopular();
     }
 
+    public static boolean verifyAdmin(Scanner console){
+        System.out.println("Please enter Admin Password");
+        int password = console.nextInt();
+        for(int i : CarWashSystem.getAdminPass()){
+            if(password == i){
+                return true;
+            }
+        }
+        System.out.println("Wrong password, terminating stat access");
+        return false;
     }
+}

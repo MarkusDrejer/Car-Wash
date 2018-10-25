@@ -5,14 +5,16 @@ public class Receipt {
     private int washCardId;
     private String washType;
 
-    public Receipt(int orderID, String costumerName, int washCardId, String washType) {
+    public Receipt(int orderID, int total, String costumerName, int washCardId, String washType) {
         this.orderID = orderID;
+        this.total = total;
         this.costumerName = costumerName;
         this.washCardId = washCardId;
         this.washType = washType;
     }
-    public Receipt(int orderID, String costumerName, int washCard) {
+    public Receipt(int orderID, int total, String costumerName, int washCardId) {
         this.orderID = orderID;
+        this.total = total;
         this.costumerName = costumerName;
         this.washCardId = washCardId;
     }
