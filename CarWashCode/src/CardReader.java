@@ -6,8 +6,8 @@ public abstract class CardReader {
     private static Scanner console = new Scanner(System.in);
     private static Card currentCard = null;
 
-    public static Card cardInsert(ArrayList<Card> arr) {
-        System.out.println("Id please");
+    public static Card cardInsert(String type, ArrayList<Card> arr) {
+        System.out.println(type + " Id please");
         int userId = console.nextInt();
 
         //Cant loop properly after 1st attempt
@@ -19,7 +19,7 @@ public abstract class CardReader {
         }
         if (currentCard == null) {
             System.out.println("No such Id, please try again");
-            cardInsert(arr);
+            cardInsert(type, arr);
         }
         else {
             enterPin();

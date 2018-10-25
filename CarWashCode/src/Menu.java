@@ -17,12 +17,12 @@ public class Menu {
             switch (choice){
                 //Wash Car
                 case 1:
-                    currentWashCard = (WashCard) CardReader.cardInsert(CarWashSystem.getWashCards());
+                    currentWashCard = (WashCard) CardReader.cardInsert("Wash", CarWashSystem.getWashCards());
                     washTypeMenu(console);
                     break;
                 //Balance
                 case 2:
-                    currentWashCard = (WashCard) CardReader.cardInsert(CarWashSystem.getWashCards());
+                    currentWashCard = (WashCard) CardReader.cardInsert("Wash", CarWashSystem.getWashCards());
                     System.out.println("Your balance is: " + currentWashCard.getBalance());
                     break;
                 //Recharge
@@ -33,8 +33,6 @@ public class Menu {
                 case 4:
 
                     break;
-
-
             }
 
         }while(choice != 0);
