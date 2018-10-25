@@ -29,5 +29,9 @@ public class WashCard extends Card{
         return pin;
     }
 
+    public String getName(){
+        return name;
+    }
+
 
 }

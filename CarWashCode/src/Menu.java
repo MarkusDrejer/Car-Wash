@@ -50,18 +50,26 @@ public class Menu {
             switch (choice2){
                 case 1:
                     currentWash = new Wash("Economy", "1:30", 50, 1);
-                    Transaction tr1 = new Transaction(currentWash.getPrice(), currentWashCard);
+                    System.out.println(currentWash);
+                    makeWash();
                     break;
                 case 2:
                     currentWash = new Wash("Standard", "2:00", 80, 2);
-                    Transaction tr2 = new Transaction(currentWash.getPrice(), currentWashCard);
+                    System.out.println(currentWash);
+                    makeWash();
                     break;
                 case 3:
                     currentWash = new Wash("Deluxe", "3:00", 120, 3);
-                    Transaction tr3 = new Transaction(currentWash.getPrice(), currentWashCard);
+                    System.out.println(currentWash);
+                    makeWash();
                     break;
             }
-
         } while(choice2 != 0);
+    }
+
+    private void makeWash(){
+        Transaction tr = new Transaction(currentWash.getPrice(), currentWashCard);
+        Receipt rec = new Receipt(0, currentWashCard.getName(), currentWashCard.getId(), currentWash.getType());
+        System.out.println(rec);
     }
 }
