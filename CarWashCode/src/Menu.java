@@ -19,7 +19,7 @@ public class Menu {
                     washTypeMenu(console);
                     break;
                 case 2:
-                    currentWashCard = (WashCard) CardReader.CardInsert(CarWashSystem.getWashCards());
+                    currentWashCard = (WashCard) CardReader.cardInsert(CarWashSystem.getWashCards());
                     System.out.println("Your balance is: " + currentWashCard.getBalance());
                     break;
                 case 3:
