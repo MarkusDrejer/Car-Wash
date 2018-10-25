@@ -6,7 +6,7 @@ public class Receipt {
     private String washType;
 
     public String printReceipt() {
-        return "hej";
+        return "Your orderId: " + orderID + "\n";
     }
     public Receipt(int orderID, String costumerName, int washCardId, String washType) {
         this.orderID = orderID;

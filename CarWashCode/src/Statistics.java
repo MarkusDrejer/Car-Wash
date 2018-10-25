@@ -1,29 +1,29 @@
 import java.util.ArrayList;
 
-public abstract class Statistics {
+    public abstract class Statistics {
 
-private int count;
-private int revenue = 0;
-private ArrayList<String> washTypes;
+    private int count;
+    private int revenue = 0;
+    private ArrayList<String> washTypes;
 
-public void addWash() {
+    public void addWash() {
+        count++;
+    }
 
-}
+    public void addRevenue(int newRevenue) {
 
-public void addRevenue(int newRevenue) {
+    }
 
-}
+    public void addWashType(String type) {
 
-public void addWashType(String type) {
+    }
 
-}
+    public String getStats() {
+        return "lort";
+    }
 
-public String getStats() {
-    return "lort";
-}
+    private String findPopular() {
+        return "lort";
+    }
 
-private String findPopular() {
-    return "lort";
-}
-
-}
+    }

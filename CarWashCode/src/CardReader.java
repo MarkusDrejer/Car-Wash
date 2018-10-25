@@ -10,7 +10,7 @@ public abstract class CardReader {
         System.out.println("Id please");
         int userId = console.nextInt();
 
-        //Cant loop properly on after 1st attempt
+        //Cant loop properly after 1st attempt
         for (Card c : arr) {
             if (userId == c.getId()) {
                 currentCard = c;
