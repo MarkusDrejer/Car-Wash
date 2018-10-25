@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Menu {
@@ -5,6 +6,7 @@ public class Menu {
     private WashCard currentWashCard;
     private CreditCard currentCreditCard;
     private Wash currentWash;
+    private Random rand = new Random();
 
     public Menu(Scanner console){
         int choice;
@@ -51,29 +53,34 @@ public class Menu {
                 case 1:
                     currentWash = new Wash("Economy", "1:30", 50, 1);
                     System.out.println(currentWash);
-                    makeWash();
+                    makeWash(console);
                     break;
                 case 2:
                     currentWash = new Wash("Standard", "2:00", 80, 2);
                     System.out.println(currentWash);
-                    makeWash();
+                    makeWash(console);
                     break;
                 case 3:
                     currentWash = new Wash("Deluxe", "3:00", 120, 3);
                     System.out.println(currentWash);
-                    makeWash();
+                    makeWash(console);
                     break;
             }
         } while(choice2 != 0);
     }
 
-    private void makeWash(){
-        currentWash.addStats();
+    private void makeWash(Scanner console){
         Transaction tr = new Transaction(currentWash.getPrice(), currentWashCard);
-        Receipt rec = new Receipt(0, currentWash.getPrice(), currentWashCard.getName(),
-                currentWashCard.getId(), currentWash.getType());
+        currentWash.addStats();
         System.out.println("Thanks for your purchase, your wash will begin shortly");
-        System.out.println(rec);
+
+        System.out.println("Do you want a Receipt? (Yes or No)");
+        console.nextLine();
+        if(console.nextLine().equalsIgnoreCase("yes")) {
+            Receipt rec = new Receipt(rand.nextInt(10000), currentWash.getPrice(), currentWashCard.getName(),
+                    currentWashCard.getId(), currentWash.getType());
+            System.out.println(rec);
+        }
     }
     private void makeRecharge(Scanner console){
         currentCreditCard = (CreditCard) CardReader.cardInsert("Credit", CarWashSystem.getCreditCards());
@@ -84,7 +91,11 @@ public class Menu {
         currentWashCard.recharge(amountToInsert);
         System.out.println( amountToInsert + " Successfully inserted");
 
-        Receipt rec = new Receipt(0, amountToInsert, currentWashCard.getName(), currentWashCard.getId());
-        System.out.println(rec);
+        System.out.println("Do you want a Receipt? (Yes or No)");
+        console.nextLine();
+        if(console.nextLine().equalsIgnoreCase("yes")) {
+            Receipt rec = new Receipt(rand.nextInt(10000), amountToInsert, currentWashCard.getName(), currentWashCard.getId());
+            System.out.println(rec);
+        }
     }
 }
