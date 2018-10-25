@@ -35,7 +35,7 @@ public class Wash {
         if(typeStat != 3){
             checkDiscount();
         }
-    return "Type: " + type + "\n" + "Length: " + length + "\n" + "Price: " + price;
+    return "Type: " + type + "\n" + "Length: " + length + "\n" + "Price: " + price + " kr.";
     }
 
     public void addStats() {

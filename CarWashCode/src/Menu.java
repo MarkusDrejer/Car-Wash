@@ -86,13 +86,28 @@ public class Menu {
         currentWash.addStats();
         System.out.println("Thanks for your purchase, your wash will begin shortly");
 
-        System.out.println("Do you want a Receipt? (Yes or No)");
-        console.nextLine();
-        if(console.nextLine().equalsIgnoreCase("yes")) {
+        System.out.println("Do you want a Receipt? (1 for Yes or 2 for No)");
+
+        int receiptChoice = console.nextInt();
+
+        while (receiptChoice != 1 && receiptChoice != 2) {
+            System.out.println("I didn't understand that. Do you want a Receipt? (1 for Yes or 2 for No):");
+            receiptChoice = console.nextInt();
+        }
+
+        if(receiptChoice == 1) {
             Receipt rec = new Receipt(rand.nextInt(10000), currentWash.getPrice(), currentWashCard.getName(),
                     currentWashCard.getId(), currentWash.getType());
             System.out.println(rec);
         }
+
+        /* console.nextLine();
+         if(console.nextLine().equalsIgnoreCase("yes")) {
+            Receipt rec = new Receipt(rand.nextInt(10000), currentWash.getPrice(), currentWashCard.getName(),
+                    currentWashCard.getId(), currentWash.getType());
+            System.out.println(rec);
+        } */
+
     }
     private void makeRecharge(Scanner console){
         currentCreditCard = (CreditCard) CardReader.cardInsert("Credit", CarWashSystem.getCreditCards());

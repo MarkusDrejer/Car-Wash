@@ -55,7 +55,7 @@ public abstract class Statistics {
 
     public static String showStats() {
         return "Number of washes: " + count + "\n" + "Revenue: " + revenue + "\n" + "Most popular wash: "
-                + findPopular();
+                + findPopular() + "\n";
     }
 
     public static boolean verifyAdmin(Scanner console){
