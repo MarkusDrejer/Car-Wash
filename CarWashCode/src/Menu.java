@@ -42,14 +42,13 @@ public class Menu {
                     }
                     break;
             }
-
         }while(choice != 0);
     }
 
     private void washTypeMenu(Scanner console){
         int choice2;
-        do {
 
+        do {
             System.out.println("Please choose wash type:");
             System.out.println("1. Economy" + "\n" + "2. Standard" + "\n" + "3. Deluxe" + "\n" + "0. Cancel");
             choice2 = console.nextInt();
@@ -88,7 +87,6 @@ public class Menu {
             System.out.println("Insufficient funds - please recharge your WashCard.");
             System.out.println();
         } else {
-
             Transaction tr = new Transaction(currentWash.getPrice(), currentWashCard);
             currentWash.addStats();
             System.out.println("Thank you for your purchase, your wash will begin shortly");
@@ -107,17 +105,9 @@ public class Menu {
                         currentWashCard.getId(), currentWash.getType());
                 System.out.println(rec);
             }
-
-        /* console.nextLine();
-         if(console.nextLine().equalsIgnoreCase("yes")) {
-            Receipt rec = new Receipt(rand.nextInt(10000), currentWash.getPrice(), currentWashCard.getName(),
-                    currentWashCard.getId(), currentWash.getType());
-            System.out.println(rec);
-        } */
-
         }
-
     }
+
     private void makeRecharge(Scanner console){
         currentCreditCard = (CreditCard) CardReader.cardInsert("Credit", CarWashSystem.getCreditCards());
         currentWashCard = (WashCard) CardReader.cardInsert("Wash", CarWashSystem.getWashCards());

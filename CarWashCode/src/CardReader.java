@@ -4,26 +4,27 @@ import java.util.Scanner;
 public abstract class CardReader {
 
     private static Scanner console = new Scanner(System.in);
-    private static Card currentCard = null;
+    private static Card currentCard;
 
     public static Card cardInsert(String type, ArrayList<Card> arr) {
+        currentCard = null;
         System.out.println(type + " ID please:");
         int userId = console.nextInt();
 
-        //Cant loop properly after 1st attempt
-        for (Card c : arr) {
-            if (userId == c.getId()) {
-                currentCard = c;
-                break;
+        while(currentCard == null) {
+            for (Card c : arr) {
+                if (userId == c.getId()) {
+                    currentCard = c;
+                    break;
+                }
+            }
+            if(currentCard == null) {
+                System.out.println("No such Id, please enter a new Id");
+                userId = console.nextInt();
             }
         }
-        if (currentCard == null) {
-            System.out.println("No such ID, please try again:");
-            cardInsert(type, arr);
-        }
-        else {
-            enterPin();
-        }
+        enterPin();
+
         return currentCard;
     }
 
