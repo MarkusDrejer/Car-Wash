@@ -29,7 +29,7 @@ public class Menu {
                 //Balance
                 case 2:
                     currentWashCard = (WashCard) CardReader.cardInsert("Wash", CarWashSystem.getWashCards());
-                    System.out.println("Your balance is: " + currentWashCard.getBalance());
+                    System.out.println("Your balance is: " + currentWashCard.getBalance() + " kr.");
                     break;
                 //Recharge
                 case 3:
@@ -78,28 +78,35 @@ public class Menu {
                     choice2 = 0;
                     break;
             }
+
         } while(choice2 != 0);
     }
 
     private void makeWash(Scanner console){
-        Transaction tr = new Transaction(currentWash.getPrice(), currentWashCard);
-        currentWash.addStats();
-        System.out.println("Thanks for your purchase, your wash will begin shortly");
 
-        System.out.println("Do you want a Receipt? (1 for Yes or 2 for No)");
+        if (currentWash.getPrice() > currentWashCard.getBalance()) {
+            System.out.println("Insufficient funds - please recharge your WashCard.");
+            System.out.println();
+        } else {
 
-        int receiptChoice = console.nextInt();
+            Transaction tr = new Transaction(currentWash.getPrice(), currentWashCard);
+            currentWash.addStats();
+            System.out.println("Thank you for your purchase, your wash will begin shortly");
 
-        while (receiptChoice != 1 && receiptChoice != 2) {
-            System.out.println("I didn't understand that. Do you want a Receipt? (1 for Yes or 2 for No):");
-            receiptChoice = console.nextInt();
-        }
+            System.out.println("Do you want a Receipt? (1 for Yes or 2 for No)");
 
-        if(receiptChoice == 1) {
-            Receipt rec = new Receipt(rand.nextInt(10000), currentWash.getPrice(), currentWashCard.getName(),
-                    currentWashCard.getId(), currentWash.getType());
-            System.out.println(rec);
-        }
+            int receiptChoice = console.nextInt();
+
+            while (receiptChoice != 1 && receiptChoice != 2) {
+                System.out.println("I didn't understand that. Do you want a Receipt? (1 for Yes or 2 for No):");
+                receiptChoice = console.nextInt();
+            }
+
+            if (receiptChoice == 1) {
+                Receipt rec = new Receipt(rand.nextInt(10000), currentWash.getPrice(), currentWashCard.getName(),
+                        currentWashCard.getId(), currentWash.getType());
+                System.out.println(rec);
+            }
 
         /* console.nextLine();
          if(console.nextLine().equalsIgnoreCase("yes")) {
@@ -107,6 +114,8 @@ public class Menu {
                     currentWashCard.getId(), currentWash.getType());
             System.out.println(rec);
         } */
+
+        }
 
     }
     private void makeRecharge(Scanner console){
