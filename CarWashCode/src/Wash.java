@@ -5,17 +5,19 @@ public class Wash {
 
     private String type;
     private String length;
+    private int lengthStat;
     private int price;
     private int typeStat;
     private int day;
     private int time;
     Date now = new Date();
 
-    public Wash(String type, String length, int price, int typeStat) {
+    public Wash(String type, String length, int price, int typeStat, int lengthStat) {
         this.type = type;
         this.length = length;
         this.price = price;
         this.typeStat = typeStat;
+        this.lengthStat = lengthStat;
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(now);
         day = calendar.get(Calendar.DAY_OF_WEEK);
@@ -52,5 +54,7 @@ public class Wash {
         return price;
     }
 
-
+    public int getLengthStat(){
+        return lengthStat;
+    }
 }

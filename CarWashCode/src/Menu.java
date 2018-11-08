@@ -59,19 +59,19 @@ public class Menu {
 
             switch (choice2){
                 case 1:
-                    currentWash = new Wash("Economy", "1:30", 50, 1);
+                    currentWash = new Wash("Economy", "2", 50, 1, 2);
                     System.out.println(currentWash);
                     makeWash(console);
                     choice2 = 0;
                     break;
                 case 2:
-                    currentWash = new Wash("Standard", "2:00", 80, 2);
+                    currentWash = new Wash("Standard", "3", 80, 2, 3);
                     System.out.println(currentWash);
                     makeWash(console);
                     choice2 = 0;
                     break;
                 case 3:
-                    currentWash = new Wash("Deluxe", "3:00", 120, 3);
+                    currentWash = new Wash("Deluxe", "4", 120, 3, 4);
                     System.out.println(currentWash);
                     makeWash(console);
                     choice2 = 0;
@@ -105,6 +105,8 @@ public class Menu {
                         currentWashCard.getId(), currentWash.getType());
                 System.out.println(rec);
             }
+            //Not in the final delivery
+            timer();
         }
     }
 
@@ -135,5 +137,30 @@ public class Menu {
             Receipt rec = new Receipt(rand.nextInt(10000), amountToInsert, currentWashCard.getName(), currentWashCard.getId());
             System.out.println(rec);
         }
+    }
+
+
+    //Not in the final delivery
+    public void timer() {
+        int timet = currentWash.getLengthStat() * 60; // Convert to seconds
+        long delay = timet * 1000;
+
+        System.out.println("Your wash will be done in");
+
+        do {
+            int minutes = timet / 60;
+            int seconds = timet % 60;
+            System.out.println(minutes + " minute(s), " + seconds + " second(s)");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt(); // Here!
+                throw new RuntimeException(ex);
+            }
+            timet = timet - 1;
+            delay = delay - 1000;
+
+        } while (delay != 0);
+        System.out.println("Your wash is now finished");
     }
 }

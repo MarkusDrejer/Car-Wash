@@ -32,7 +32,6 @@ public class CarWashSystem {
         }
 
         Menu m = new Menu(console);
-        
     }
     
     private static void processLineW(String text) {
